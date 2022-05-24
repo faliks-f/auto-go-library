@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "小红",
+      "Authorization": "abcd",
+      "wechatSESS_ID": "abcd"
+    },
+    {
+      "name": "小白",
+      "Authorization": "abcd",
+      "wechatSESS_ID": "abcd"
+    }
+  ]
+}
