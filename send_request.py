@@ -13,8 +13,10 @@ def get_session(wechat_sess_id: str, authorization: str) -> requests.Session:
                               "Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 " \
                               "Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(" \
                               "0x63010200) "
-    s.headers["wechatSESS_ID"] = wechat_sess_id
-    s.headers["Authorization"] = authorization
+    s.cookies["wechatSessioId"] = wechat_sess_id
+    s.cookies["Authorization"] = authorization
+    # s.headers["wechatSESS_ID"] = wechat_sess_id
+    # s.headers["Authorization"] = authorization
     return s
 
 
@@ -37,6 +39,8 @@ def post_index(s: requests.Session) -> dict:
             "query": index_query
             }
     res = s.post(url=url, json=data)
+    # print(res)
+    # print(res.headers)
     return res.json()
 
 

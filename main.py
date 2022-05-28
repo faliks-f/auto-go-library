@@ -37,6 +37,7 @@ def go(s: requests.Session):
             if status is not None and status:
                 print("预约成功")
                 return
+            time.sleep(10)
     print("预约失败")
 
 
@@ -46,12 +47,14 @@ def job():
 
 
 def job_thread(threadName):
-    schedule.every().day.at("06:02").do(job)
+    schedule.every().day.at("06:00").do(job)
     while True:
         schedule.run_pending()
-        time.sleep(5)
+        time.sleep(60)
         for s in manager.get_sessions():
+            post_index(s)
             need_often_send(s)
+            # print(s.cookies)
 
 
 if __name__ == '__main__':
