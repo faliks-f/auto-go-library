@@ -2,13 +2,18 @@
   "users": [
     {
       "name": "小红",
-      "Authorization": "abcd",
-      "wechatSESS_ID": "abcd"
+      "cookies": {
+        "Authorization": "abcd",
+        "wechatSESS_ID": "abcd",
+        "SERVERID": "d3936289adfff6c3874a2579058ac651|1654865010|1654865006"
+      }
     },
     {
       "name": "小白",
-      "Authorization": "abcd",
-      "wechatSESS_ID": "abcd"
+      "cookies": {
+        "Authorization": "abcd",
+        "wechatSESS_ID": "abcd"
+      }
     }
   ]
 }
